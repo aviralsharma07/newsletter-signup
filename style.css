@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   /* display: none; */
 }
 
@@ -37,10 +37,14 @@ body {
   border-radius: 0 0 15px 15px;
 }
 
-.newsletter-img img {
+.newsletter-img .mobile-img {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.newsletter-img .desktop-img {
+  display: none;
 }
 
 .newsletter-text {
@@ -131,7 +135,7 @@ body {
 }
 
 .success-container {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -173,4 +177,70 @@ body {
 
 .dismiss-btn:hover {
   background: var(--tomato);
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-slate-grey);
+  }
+  .newsletter-container {
+    border-radius: 30px;
+    background: var(--white);
+    max-width: 55rem;
+    height: 35rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newsletter-img {
+    width: 55%;
+    height: 90%;
+    order: 2;
+    background: url(./assets/images/illustration-sign-up-desktop.svg) center/90% no-repeat;
+  }
+
+  .newsletter-img .mobile-img {
+    display: none;
+  }
+
+  .newsletter-text {
+    width: 45%;
+    height: 90%;
+    margin: unset;
+    margin-left: 3rem;
+  }
+
+  .newsletter-text h1 {
+    font-size: 3rem;
+    margin: 3rem 0 2rem 0;
+  }
+
+  .success-container {
+    background: var(--white);
+    width: 25rem;
+    height: 30rem;
+    border-radius: 30px;
+  }
+
+  .success-container img {
+    margin-top: 3rem;
+    width: 3.5rem;
+  }
+
+  .success-container p {
+    margin-bottom: 5rem;
+  }
 }
